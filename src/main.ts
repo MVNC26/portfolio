@@ -2,6 +2,8 @@ import { Engine, FadeInOut } from "excalibur";
 import { wellcomeScene } from "./scenes/welcomeScene";
 import { loader } from "./resources";
 import { historyScene } from "./scenes/historyScene";
+import { gameficationScene } from "./scenes/gamificationScene";
+
 
 const game = new Engine({
   width: 1200,
@@ -10,7 +12,8 @@ const game = new Engine({
 })
 
 game.addScene("bemvindo", new wellcomeScene())
-game.addScene("historia", new historyScene)
+game.addScene("historia", new historyScene())
+game.addScene("gamificacao", new gameficationScene() )
 
 game.start(loader).then(() =>{
   
