@@ -67,7 +67,9 @@ export class wellcomeScene extends Scene {
         //ao precionar enter 
         this.input.keyboard.on("press", (event) => {
             if (event.key == Keys.Enter || Keys.NumpadEnter ){
-                engine.goToScene("historia")
+                engine.goToScene("historia", {
+                    sourceOut: new FadeInOut({ duration: 1000 })
+                })
             }
         })
 

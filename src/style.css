@@ -17,7 +17,11 @@
     position: relative;
   }
 
-  .sobre-gamefica{
+  .sobre-gamefica{ left: 5%;}
+
+  .gamificacao{right: 5%}
+
+  .sobre-gamefica, .gamificacao{
     width: 500px;
     height: 600px;
 
@@ -31,21 +35,21 @@
 
     position: absolute;
     top: 10%;
-    left: 5%;
   }
 
-  .sobre-gamefica h2{
+  .sobre-gamefica, .gamificacao h2{
     margin-bottom: 40px;
     
     font-size: 30px;
     text-align: center;
   }
-  .sobre-gamefica p{
+  .sobre-gamefica, .gamificacao p{
     font-size: 16px;
     text-align: justify;
 
     line-height: 2;
   }
+
 
 
   
