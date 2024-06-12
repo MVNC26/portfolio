@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="29" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="1">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="29" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="26">
  <tileset firstgid="1" source="tileset_parede.tsx"/>
  <tileset firstgid="8285" source="tileset_generic.tsx"/>
  <tileset firstgid="9533" source="tileset_estoque.tsx"/>
@@ -28,6 +28,20 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,655
 </data>
  </layer>
+ <objectgroup id="8" name="personagens">
+  <object id="22" name="player_spawn" x="461" y="509">
+   <point/>
+  </object>
+  <object id="23" name="npc_b" x="462.75" y="227.25">
+   <point/>
+  </object>
+  <object id="24" name="npc_c" x="687" y="227">
+   <point/>
+  </object>
+  <object id="25" name="npc_a" x="237.5" y="231">
+   <point/>
+  </object>
+ </objectgroup>
  <layer id="2" name="paredes" width="29" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -76,7 +90,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="4" name="acima moveis" width="29" height="20">
+ <layer id="4" name="acimaMoveis" width="29" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -97,6 +111,52 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="7" name="objetosColisores">
+  <object id="2" name="mesa_stand_a" x="201.455" y="240.364" width="76.5455" height="41.2727"/>
+  <object id="3" name="comoda_a" x="287.818" y="242.5" width="31.8182" height="37.6818"/>
+  <object id="4" name="mesa_sinuca" x="717.5" y="377.833" width="62.6667" height="85.5833"/>
+  <object id="5" name="mesa_stand_b" x="425.903" y="239.909" width="76.0966" height="42.1477"/>
+  <object id="7" name="mesa_stand_c" x="650.034" y="239.557" width="75.9659" height="40.5568"/>
+  <object id="8" name="comoda_b" x="511.875" y="241.75" width="32.125" height="38.5"/>
+  <object id="9" name="comoda_c" x="735.75" y="241.375" width="32.25" height="38.75"/>
+  <object id="10" name="mesa_computador_a" x="137.5" y="234.125" width="44.125" height="53.375"/>
+  <object id="11" name="mesa_computador_b" x="362.125" y="234" width="43.625" height="54"/>
+  <object id="13" name="mesa_computador_c" x="585.636" y="233.455" width="44.3636" height="53.8182"/>
+  <object id="14" name="cadeira_game_a" x="182.152" y="359.856" width="38.25" height="32.2457" rotation="0.0575433"/>
+  <object id="15" name="cadeira_game_b" x="181.625" y="447.125" width="38.375" height="30.875"/>
+  <object id="16" name="rack_tv" x="96.1818" y="343.273" width="25.4091" height="140.364"/>
+  <object id="17" name="tacos_sinuca" x="804" y="470.5" width="26.5" height="38.25"/>
+  <object id="18" name="planta_1" x="102" y="127.75" width="20.0625" height="14.0625"/>
+  <object id="19" name="planta_2" x="805.875" y="128.063" width="20" height="13.8125"/>
+  <object id="20" x="922" y="471"/>
+ </objectgroup>
+ <layer id="5" name="blocosColisores" width="29" height="20" opacity="0" offsetx="138" offsety="100">
+  <properties>
+   <property name="solid" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,0,0,0,393,393,393,393,393,393,393,393,393,393,393,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,393,0,0,0,393,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,393,393,393,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
