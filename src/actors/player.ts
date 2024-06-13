@@ -1,4 +1,5 @@
-import { Actor, CollisionType, Color, Engine, Keys, vec } from "excalibur";
+import { Actor, Animation, CollisionType, Color, Engine, Keys, SpriteSheet, Vector, vec } from "excalibur";
+import { Resources } from "../resources";
 
 export class Player extends Actor{
     //propiedade do player
@@ -7,9 +8,9 @@ export class Player extends Actor{
 
 
     //configura o player
-    constructor(){
+    constructor(posicao: Vector){
         super({
-            pos: vec(500, 500),
+            pos: posicao,
             width: 32,
             height: 32,
             name: "jogador",
@@ -21,6 +22,51 @@ export class Player extends Actor{
     
     onInitialize(engine: Engine<any>): void {
         //configurar player para monitorar evento teclado 
+
+        //sprite do player
+
+        const PlayerSpriteShett = SpriteSheet.fromImageSource({
+            image: Resources.PlayerSpriteShett,
+            grid:{
+                spriteWidth: 32,
+                spriteHeight: 64,
+                columns: 56,
+                rows: 20,
+            },
+
+            spacing:{
+                originOffset: {
+                    y: 8
+                }
+            } 
+        })
+
+        //criar animações 
+
+        const duracaoFrameAnimacao = 70
+
+        const leftIdle = new Animation({
+            frames: [
+                {graphic: PlayerSpriteShett.getSprite(12,1)},
+                {graphic: PlayerSpriteShett.getSprite(13,1)},
+                {graphic: PlayerSpriteShett.getSprite(14,1)},
+                {graphic: PlayerSpriteShett.getSprite(15,1)},
+                {graphic: PlayerSpriteShett.getSprite(16,1)},
+                {graphic: PlayerSpriteShett.getSprite(17,1)},
+            ],
+            frameDuration: duracaoFrameAnimacao
+        })
+        this.graphics.add("left-idel", leftIdle)
+       
+
+
+
+
+
+
+
+
+
         engine.input.keyboard.on("hold", (event) =>{
             switch (event.key) {
 
